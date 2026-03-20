@@ -9,7 +9,7 @@ const feedbackEl = document.getElementById("feedback");
 const scoreEl = document.getElementById("score");
 
 async function loadQuestions() {
-  const response = await fetch("./questions.json");
+  const response = await fetch("https://github.com/Hack-And-Slash13/bible-trivia-game/blob/main/questions.json")
   questions = await response.json();
   questions = shuffleArray(questions);
   showQuestion();
