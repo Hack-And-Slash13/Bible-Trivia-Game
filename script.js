@@ -12,7 +12,7 @@ async function loadQuestions() {
   const response = await fetch("questions.json");
   questions = await response.json();
   questions = shuffleArray(questions);
-  alert(${questions})
+  alert(`${questions}`)
   showQuestion();
 }
 
