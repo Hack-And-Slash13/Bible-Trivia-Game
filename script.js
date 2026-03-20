@@ -7,6 +7,7 @@ const answerBtns = document.querySelectorAll(".answer-btn");
 const nextBtn = document.getElementById("next_button");
 const feedbackEl = document.getElementById("feedback");
 const scoreEl = document.getElementById("score");
+const body-container = document.getElementById("body-container");
 
 async function loadQuestions() {
   const response = await fetch("./questions.json")
@@ -16,6 +17,7 @@ async function loadQuestions() {
 }
 
 function showQuestion() {
+  body-container.style.display = "flex";
   answerBtns.forEach(btn => {
   btn.classList.remove("correct", "wrong");
   });
@@ -64,10 +66,11 @@ function checkAnswer(selected, correct) {
 
 nextBtn.onclick = () => {
   currentQuestionIndex++;
-  if (currentQuestionIndex === questions.length) {
+  if (currentQuestionIndex === questions.length-1) {
     nextBtn.textContent = "submit";
   }
-  if (currentQuestionIndex > questions.length) {
+  if (currentQuestionIndex >= questions.length) {
+    body-container.style.display = "none";
     feedbackEl.textContent = `Game over. Your score: ${score}`;
     answerBtns.forEach(btn => btn.disabled = true);
     currentQuestionIndex = 0;
