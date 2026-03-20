@@ -12,11 +12,8 @@ async function loadQuestions() {
   const response = await fetch("questions.json");
   questions = await response.json();
   questions = shuffleArray(questions);
-  alert(`${questions}`)
   showQuestion();
 }
-
-loadQuestions();
 
 function showQuestion() {
   answerBtns.forEach(btn => {
@@ -66,8 +63,6 @@ function checkAnswer(selected, correct) {
 }
 
 nextBtn.onclick = () => {
-  nextBtn.textContent = "Next Question➡️";
-  feedbackEl.textContent = "";
   currentQuestionIndex++;
   if (currentQuestionIndex >= questions.length) {
     feedbackEl.textContent = `Game over. Your score: ${score}`;
@@ -76,8 +71,13 @@ nextBtn.onclick = () => {
     currentQuestionIndex = 0;
     score = 0;
     questions = shuffleArray(questions);
-    nextBtn.textContent = "play again";
+    nextBtn.textContent = "Play Again";
+    scoreEl.textContent = `Score: ${score}`;
+    return;
   }
+
+  feedbackEl.textContent = "";
+  nextBtn.textContent = "Next Question➡️";
   showQuestion();
 };
 
