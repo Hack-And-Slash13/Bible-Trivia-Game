@@ -1,5 +1,8 @@
 body {
   font-family: Courier New;
+  background-image: url("bible_pic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   height: 80vh;
   display: flex;
