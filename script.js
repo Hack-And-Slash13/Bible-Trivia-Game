@@ -55,7 +55,7 @@ function checkAnswer(selected, correct) {
     feedbackEl.textContent = "Correct!";
     feedbackEl.classList.add("correct-feedback");
     feedbackEl.classList.remove("wrong-feedback");
-    score ++
+    score ++;
   } else {
     feedbackEl.textContent = "Wrong!";
     feedbackEl.classList.add("wrong-feedback");
@@ -73,7 +73,7 @@ nextBtn.onclick = () => {
   if (currentQuestionIndex >= questions.length) {
     answerBtns.forEach((btn, i) => {
       btn.style.display = "none";
-    })
+    })}
     feedbackEl.textContent = "";
     questionEl.textContent = `Game over. Your score: ${score}`;
     answerBtns.forEach(btn => btn.disabled = true);
