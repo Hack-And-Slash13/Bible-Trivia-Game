@@ -1,7 +1,7 @@
 body {
   font-family: Courier New;
   margin: 0;
-  height: 100vh;
+  height: 500vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +35,20 @@ button {
 }
 
 #score {
+  color: white;
   position: absolute;
   bottom: 20px;
   left: 20px;
   font-size: 18px;
+  font-weight: bold;
+}
+
+#next_button {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
