@@ -16,7 +16,6 @@ async function loadQuestions() {
 }
 
 function showQuestion() {
-  body-container.style.display = "flex";
   answerBtns.forEach(btn => {
   btn.classList.remove("correct", "wrong");
   });
