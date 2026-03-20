@@ -2,7 +2,6 @@ body {
   font-family: Courier New;
   margin: 0;
   height: 80vh;
-  width: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +13,7 @@ body {
 }
 
 div {
+  width: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
